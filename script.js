@@ -2,7 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 //special characters for the function created
-const specialCharacters = "!@#$%^&*()";
+const specialCharacters = "0123456789ABCDEFGHIJKLMONPQRSTUVWXYZabcdefghijklmonpqrstuvwxyz!@#$%^&*()";
 const generateButton = document.getElementById('generateBtn')
 
 // Write password to the #password input
@@ -20,13 +20,12 @@ generateBtn.addEventListener("click", writePassword);
 //prompts that come up after you click generate password
 function generatePassword() {
   var passwordLength = prompt("please enter the number of characters you want for your new password. It must be more than 12 but less than 128.");
-
-  var number = confirm("Do you want number in your password?");
   var lowerCases = confirm("Do you want lowercases in your password?");
   var upperCases = confirm("Do you want uppercases in your password?");
+  var number = confirm("Do you want number in your password?");
   var special = confirm("Do you want specialCharacters in your password?");
 
-  // this is a minimum count for numbers, lowerCases, upperCases & specialCharacters
+  // this is a minimum count for  lowerCases, upperCases, numbers & specialCharacters
   var minimumCount = 0;
 
   // Empty minimum for numbers, lowerCases, upperCases, & specialCharacters
@@ -87,9 +86,9 @@ function generatePassword() {
 
   // loop getting random characters
   for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
-    var randomNumberPicked = Math.floor(Math.random() * 4);
+    var randomspecialCharacherspicked= Math.floor(Math.random() * 4);
 
-    randomPasswordGenerated += randomNumberPicked;
+    randomPasswordGenerated += randomspecialCharacherspicked;
 
   }
 
